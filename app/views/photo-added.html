@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Add a photo to your report
+      </h1>  
+      
+      <h2 class="govuk-heading-m">
+        Tips for taking a good photo
+      </h2>
+
+      
+<ul class="govuk-list govuk-list--bullet">
+  <li>Try and avoid blurry images</li>
+  <li>If possible, turn on all the lights in the room to get a clearer picture</li>
+  
+</ul>
+
+
+<!--add photo button-->
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  <img src="https://cdn-icons-png.flaticon.com/512/45/45010.png" id="cam-icon">Choose or take a photo
+</button>
+
+<!--photo table-->
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    
+    <dd class="govuk-summary-list__value">
+     image-name.png
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Delete<span class="govuk-visually-hidden"> image</span>
+      </a>
+    </dd>
+  </div>
+  
+</dl>
+
+<form class="form" action="/index" method="post">
+
+<div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+  <a class="govuk-link" href="#">Skip this step</a>
+</div>
+
+</form>
+    </div>
+  </div>
+
+  
+
+{% endblock %}
